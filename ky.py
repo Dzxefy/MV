@@ -11,7 +11,7 @@ import warnings
 # 加载训练好的随机森林模型(确保rf.pkl与脚本同目录)
 model = joblib.load('./model/LR2.pkl')
 # 加载测试数据
-X_test = pd.read_excel('./model/test_set.xlsx')
+X_test = pd.read_csv('./model/test_set.csv')
 # 定义特征名称(替换为业务相关列名，与编码规则对应)
 feature_names = model.feature_names_in_
 
@@ -96,4 +96,5 @@ if st.button("Submit"):
             matplotlib=True,
             show=False)
     
+
     st.pyplot(fig)
